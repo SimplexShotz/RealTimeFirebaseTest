@@ -66,10 +66,11 @@ var keyReleased = function() {
 
 function keyTyped() {
   if (typing.x !== -1) {
+    console.log(keyCode);
+    console.log(kp[32]);
     if (keyCode !== 8 && keyCode !== 13) {
       typing.t += key;
     } else if (keyCode === 8) {
-      console.log(kp[32]);
       var p = typing.t.split("").splice(0, typing.t.split("").length - 1).join("");
       typing.t = p;
     } else {
