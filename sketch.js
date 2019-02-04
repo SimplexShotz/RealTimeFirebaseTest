@@ -123,7 +123,7 @@ function draw() {
       }
     }
     fill(0);
-    if (hover(txt[i].x * window.innerWidth - s, txt[i].y * window.innerHeight - s, w + textWidth("|") + s * 2, txt[i].t.split("\n").length * 15 + s * 2 - 2)) {
+    if (hover(txt[i].x * window.innerWidth - s, txt[i].y * window.innerHeight - s, w + s * 2, txt[i].t.split("\n").length * 15 + s * 2 - 2)) {
       cursor(HAND);
       fill(255, 0, 0);
     }
