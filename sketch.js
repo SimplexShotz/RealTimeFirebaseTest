@@ -96,6 +96,7 @@ function keyTyped() {
 }
 
 function draw() {
+  cursor();
   background(255);
   if (mouseIsPressed) {
     if (typing.t !== "") {
@@ -123,7 +124,8 @@ function draw() {
     }
     fill(0);
     if (hover(txt[i].x * window.innerWidth - s, txt[i].y * window.innerHeight - s, w + textWidth("|") + s * 2, txt[i].t.split("\n").length * 15 + s * 2 - 2)) {
-      fill(255);
+      cursor(HAND);
+      fill(255, 0, 0);
     }
     text(txt[i].t, txt[i].x * window.innerWidth, txt[i].y * window.innerHeight);
   }
