@@ -132,6 +132,14 @@ function draw() {
       cursor(HAND);
       fill(100);
       if (mc) {
+        if (typing.t !== "") {
+          var send = {
+            t: typing.t,
+            x: typing.x / window.innerWidth,
+            y: typing.y / window.innerHeight
+          };
+          ref.txt.push(send);
+        }
         typing = {
           t: txt[i].t,
           x: txt[i].x * window.innerWidth,
