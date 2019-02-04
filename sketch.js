@@ -60,9 +60,6 @@ var typing = {
   y: -1
 };
 
-var pmx = mouseX;
-var pmy = mouseY;
-
 var kp = [];
 var keyPressed = function() {
   kp[keyCode] = true;
@@ -74,9 +71,9 @@ var keyReleased = function() {
   kp[keyCode] = false;
 };
 
-var mc = false;
-function mouseClicked() {
-  mc = true;
+var mp = false;
+function mousePressed() {
+  mp = true;
 }
 
 function keyTyped() {
@@ -107,8 +104,6 @@ function draw() {
   cursor();
   background(255);
   if (mouseIsPressed) {
-    pmx = mouseX;
-    pmy = mouseY;
     if (typing.t !== "") {
       typing.x = mouseX;
       typing.y = mouseY;
@@ -136,12 +131,12 @@ function draw() {
     if (hover(txt[i].x * window.innerWidth - s, txt[i].y * window.innerHeight - s, w + s * 2, txt[i].t.split("\n").length * 15 + s * 2 - 2)) {
       cursor(HAND);
       fill(100);
-      if (mc) {
+      if (mp) {
         if (typing.t !== "") {
           var send = {
             t: typing.t,
-            x: pmx / window.innerWidth,
-            y: pmy / window.innerHeight
+            x: typing.x / window.innerWidth,
+            y: typing.y / window.innerHeight
           };
           ref.txt.push(send);
         }
@@ -151,7 +146,7 @@ function draw() {
           y: txt[i].y * window.innerHeight
         };
         ref.txt.child(i).remove();
-        mc = false;
+        mp = false;
         continue;
       }
     }
@@ -171,5 +166,5 @@ function draw() {
     noStroke();
     text(typing.t + (floor(frameCount / 30) % 2 ? "|" : ""), typing.x, typing.y);
   }
-  mc = false;
+  mp = false;
 }
