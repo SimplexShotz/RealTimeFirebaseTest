@@ -15,7 +15,7 @@ function setup() {
   firebase.initializeApp(config);
   var database = firebase.database();
   var ref = {
-    pts: database.ref("pts");
+    pts: database.ref("pts")
   };
 }
 
