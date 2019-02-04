@@ -64,7 +64,12 @@ function keyTyped() {
       var p = typing.t.split("").splice(0, typing.t.split("").length - 1).join("");
       typing.t = p;
     } else {
-      ref.txt.push(typing);
+      var send = {
+        t: typing.t,
+        x: typing.x / window.innerWidth,
+        y: typing.y / window.innerHeight
+      };
+      ref.txt.push(send);
       typing = {
         t: "",
         x: -1,
