@@ -85,6 +85,7 @@ function draw() {
   fill(0);
   textSize(12);
   textAlign(LEFT, TOP);
+  noStroke();
   for (var i in txt) {
     text(txt[i].t, txt[i].x, txt[i].y);
   }
