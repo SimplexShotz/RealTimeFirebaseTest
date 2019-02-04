@@ -17,6 +17,25 @@ function setup() {
   ref = {
     pts: database.ref("pts")
   };
+  
+  ref.pts.once("value", function(data) {
+    var d = data.val();
+    background(255);
+    fill(0, 0, 255);
+    noStroke();
+    for (var i in d) {
+      ellipse(d[i].x, d[i].y, 10, 10);
+    }
+  });
+  ref.pts.on("value", function(data) {
+    var d = data.val();
+    background(255);
+    fill(0, 0, 255);
+    noStroke();
+    for (var i in d) {
+      ellipse(d[i].x, d[i].y, 10, 10);
+    }
+  });
 }
 
 function draw() {
@@ -28,23 +47,3 @@ function draw() {
     });
   }
 }
-
-ref.pts.on("value", function(data) {
-  var d = data.val();
-  background(255);
-  fill(0, 0, 255);
-  noStroke();
-  for (var i in d) {
-    ellipse(d[i].x, d[i].y, 10, 10);
-  }
-});
-
-ref.pts.once("value", function(data) {
-  var d = data.val();
-  background(255);
-  fill(0, 0, 255);
-  noStroke();
-  for (var i in d) {
-    ellipse(d[i].x, d[i].y, 10, 10);
-  }
-});
