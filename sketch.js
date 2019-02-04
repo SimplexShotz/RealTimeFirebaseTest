@@ -71,6 +71,11 @@ var keyReleased = function() {
   kp[keyCode] = false;
 };
 
+var mc = false;
+function mouseClicked() {
+  mc = true;
+}
+
 function keyTyped() {
   if (typing.x !== -1) {
     if (keyCode !== 8 && keyCode !== 13) {
@@ -125,7 +130,12 @@ function draw() {
     fill(0);
     if (hover(txt[i].x * window.innerWidth - s, txt[i].y * window.innerHeight - s, w + s * 2, txt[i].t.split("\n").length * 15 + s * 2 - 2)) {
       cursor(HAND);
-      fill(255, 0, 0);
+      fill(100);
+      if (mc) {
+        typing = txt[i];
+        ref.txt.child(i).remove();
+        mc = false;
+      }
     }
     text(txt[i].t, txt[i].x * window.innerWidth, txt[i].y * window.innerHeight);
   }
@@ -143,4 +153,5 @@ function draw() {
     noStroke();
     text(typing.t + (floor(frameCount / 30) % 2 ? "|" : ""), typing.x, typing.y);
   }
+  mc = false;
 }
