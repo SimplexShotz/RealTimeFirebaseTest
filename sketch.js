@@ -89,6 +89,6 @@ function draw() {
     text(txt[i].t, txt[i].x, txt[i].y);
   }
   if (typing.x !== -1) {
-    text(typing.t + (floor(frameCount / 60) % 2 ? "|" : ""), typing.x, typing.y);
+    text(typing.t + (floor(frameCount / 30) % 2 ? "|" : ""), typing.x, typing.y);
   }
 }
