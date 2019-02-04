@@ -59,6 +59,7 @@ var typing = {
 var kp = [];
 var keyPressed = function() {
   kp[keyCode] = true;
+  console.log(keyCode);
 };
 var keyReleased = function() {
   kp[keyCode] = false;
