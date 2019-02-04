@@ -60,6 +60,9 @@ var typing = {
   y: -1
 };
 
+var pmx = mouseX;
+var pmy = mouseY;
+
 var kp = [];
 var keyPressed = function() {
   kp[keyCode] = true;
@@ -104,6 +107,8 @@ function draw() {
   cursor();
   background(255);
   if (mouseIsPressed) {
+    pmx = mouseX;
+    pmy = mouseY;
     if (typing.t !== "") {
       typing.x = mouseX;
       typing.y = mouseY;
@@ -135,8 +140,8 @@ function draw() {
         if (typing.t !== "") {
           var send = {
             t: typing.t,
-            x: typing.x / window.innerWidth,
-            y: typing.y / window.innerHeight
+            x: pmx / window.innerWidth,
+            y: pmy / window.innerHeight
           };
           ref.txt.push(send);
         }
