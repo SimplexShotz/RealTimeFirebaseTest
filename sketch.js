@@ -65,6 +65,9 @@ var keyPressed = function() {
   kp[keyCode] = true;
   if (keyCode === 8) {
     typing.t = typing.t.split("").splice(0, typing.t.split("").length - 1).join("");
+    if (kp[16]) {
+      typing.t = "";
+    }
   }
 };
 var keyReleased = function() {
