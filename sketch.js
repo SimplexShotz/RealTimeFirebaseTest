@@ -135,6 +135,7 @@ function draw() {
         typing = txt[i];
         ref.txt.child(i).remove();
         mc = false;
+        continue;
       }
     }
     text(txt[i].t, txt[i].x * window.innerWidth, txt[i].y * window.innerHeight);
