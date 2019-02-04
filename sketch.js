@@ -61,7 +61,7 @@ function keyTyped() {
     if (keyCode !== 8 && keyCode !== 13) {
       typing.t += key;
     } else if (keyCode === 8) {
-      typing.t = typing.t.split("").splice(0, typing.t.length - 1).join("");
+      typing.t = typing.t.split("").splice(0, typing.t.split("").length - 1).join("");
     } else {
       ref.txt.push(typing);
       typing = {
@@ -89,6 +89,6 @@ function draw() {
     fill(0);
     textSize(12);
     textAlign(LEFT, TOP);
-    text(typing.t, typing.x, typing.y);
+    text(typing.t + (floor(frameCount / 60) % 2 ? "|" : ""), typing.x, typing.y);
   }
 }
