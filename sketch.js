@@ -61,7 +61,8 @@ function keyTyped() {
     if (keyCode !== 8 && keyCode !== 13) {
       typing.t += key;
     } else if (keyCode === 8) {
-      typing.t = typing.t.split("").splice(0, typing.t.split("").length - 1).join("");
+      var p = typing.t.split("").splice(0, typing.t.split("").length - 1).join("");
+      typing.t = p;
     } else {
       ref.txt.push(typing);
       typing = {
@@ -76,6 +77,9 @@ function keyTyped() {
 function draw() {
   background(255);
   if (mouseIsPressed) {
+    if (typing.t !== "") {
+      ref.txt.push(typing);
+    }
     typing = {
       t: "",
       x: mouseX,
