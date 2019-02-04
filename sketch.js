@@ -82,13 +82,13 @@ function draw() {
       y: mouseY
     };
   }
+  fill(0);
+  textSize(12);
+  textAlign(LEFT, TOP);
   for (var i in txt) {
     text(txt[i].t, txt[i].x, txt[i].y);
   }
   if (typing.x !== -1) {
-    fill(0);
-    textSize(12);
-    textAlign(LEFT, TOP);
     text(typing.t + (floor(frameCount / 60) % 2 ? "|" : ""), typing.x, typing.y);
   }
 }
