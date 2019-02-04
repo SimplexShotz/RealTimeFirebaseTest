@@ -132,7 +132,11 @@ function draw() {
       cursor(HAND);
       fill(100);
       if (mc) {
-        typing = txt[i];
+        typing = {
+          t: txt[i].t,
+          x: txt[i].x * window.innerWidth,
+          y: txt[i].y * window.innerHeight
+        };
         ref.txt.child(i).remove();
         mc = false;
         continue;
