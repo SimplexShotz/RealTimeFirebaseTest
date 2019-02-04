@@ -127,6 +127,7 @@ function draw() {
   textSize(12);
   textAlign(LEFT, TOP);
   noStroke();
+  text("Welcome to the Online Editor Board!\n\n Click anywhere to create a new message.\n Use \"enter\" to send a message.\n Click on any message to edit it.\n\n Use \"shift + enter\" to create a new line.\n Use \"shift + delete\" to erase an entire message.", 20, 20);
   var s = 5;
   for (var i in txt) {
     var w = 0;
