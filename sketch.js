@@ -78,7 +78,7 @@ function draw() {
   background(255);
   if (mouseIsPressed) {
     if (typing.t !== "") {
-      typing.x = mosueX;
+      typing.x = mouseX;
       typing.y = mouseY;
     } else {
       typing = {
@@ -100,6 +100,6 @@ function draw() {
     text(typing.t + (floor(frameCount / 30) % 2 ? "|" : ""), typing.x, typing.y);
     noFill();
     stroke(0);
-    rect(typing.x - s, typing.y - s, textWidth(typing.t + "|") + s * 2, typing.t.split("\n").length * 14 + s * 2);
+    rect(typing.x - s, typing.y - s, textWidth(typing.t + "|") + s * 2, typing.t.split("\n").length * 14 + s * 2 - 2);
   }
 }
