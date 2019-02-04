@@ -98,7 +98,7 @@ function draw() {
   textAlign(LEFT, TOP);
   noStroke();
   for (var i in txt) {
-    text(txt[i].t, txt[i].x, txt[i].y);
+    text(txt[i].t, txt[i].x * window.innerWidth, txt[i].y * window.innerHeight);
   }
   if (typing.x !== -1) {
     var s = 5;
