@@ -39,7 +39,7 @@ function setup() {
 }
 
 function draw() {
-  background(250);
+//   background(250);
   if (mouseIsPressed) {
     ref.pts.push({
       x: mouseX,
