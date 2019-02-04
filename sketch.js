@@ -107,8 +107,8 @@ function draw() {
   cursor();
   background(255);
   if (mouseIsPressed) {
-    pmx = mouseX;
-    pmy = mouseY;
+    pmx = typing.x;
+    pmy = typing.y;
     if (typing.t !== "") {
       typing.x = mouseX;
       typing.y = mouseY;
