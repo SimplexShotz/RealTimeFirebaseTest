@@ -1,5 +1,5 @@
 
-// var firebase;
+var database, ref;
 
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
@@ -13,8 +13,8 @@ function setup() {
     messagingSenderId: "628446710214"
   };
   firebase.initializeApp(config);
-  var database = firebase.database();
-  var ref = {
+  database = firebase.database();
+  ref = {
     pts: database.ref("pts")
   };
 }
