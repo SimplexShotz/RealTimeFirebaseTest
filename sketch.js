@@ -78,13 +78,15 @@ function draw() {
   background(255);
   if (mouseIsPressed) {
     if (typing.t !== "") {
-      ref.txt.push(typing);
+      typing.x = mosueX;
+      typing.y = mouseY;
+    } else {
+      typing = {
+        t: "",
+        x: mouseX,
+        y: mouseY
+      };
     }
-    typing = {
-      t: "",
-      x: mouseX,
-      y: mouseY
-    };
   }
   fill(0);
   textSize(12);
