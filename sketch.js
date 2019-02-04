@@ -69,9 +69,9 @@ var keyReleased = function() {
 
 function keyTyped() {
   if (typing.x !== -1) {
-    if (keyCode !== 8 && !(keyCode === 13 && kp[16])) {
+    if (keyCode !== 8 && !(keyCode === 13 && !kp[16])) {
       typing.t += key;
-    } else if (keyCode === 13 && kp[16]) {
+    } else if (keyCode === 13 && !kp[16]) {
       var send = {
         t: typing.t,
         x: typing.x / window.innerWidth,
