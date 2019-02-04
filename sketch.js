@@ -122,7 +122,7 @@ function draw() {
       }
     }
     fill(0);
-    if (hover(t[i].x - s, t[i].y - s, w + textWidth("|") + s * 2, txt[i].t.split("\n").length * 15 + s * 2 - 2)) {
+    if (hover(txt[i].x - s, txt[i].y - s, w + textWidth("|") + s * 2, txt[i].t.split("\n").length * 15 + s * 2 - 2)) {
       fill(255);
     }
     text(txt[i].t, txt[i].x * window.innerWidth, txt[i].y * window.innerHeight);
