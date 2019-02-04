@@ -89,6 +89,10 @@ function draw() {
     text(txt[i].t, txt[i].x, txt[i].y);
   }
   if (typing.x !== -1) {
+    var s = 5;
     text(typing.t + (floor(frameCount / 30) % 2 ? "|" : ""), typing.x, typing.y);
+    noFill();
+    stroke(0);
+    rect(typing.x - s, typing.y - s, textWidth(typing.t + "|") + s * 2, typing.t.split("\n").length * 14 + s * 2);
   }
 }
